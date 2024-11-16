@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TpOperatingSystemApplication<TP_Operating_System>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "chornarin.com.kh.TP_Operating_System.TpOperatingSystemApplication",
+            "projectName": "TP_Operating_System",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
