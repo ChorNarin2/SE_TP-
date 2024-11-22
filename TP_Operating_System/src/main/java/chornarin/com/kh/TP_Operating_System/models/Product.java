@@ -1,38 +1,43 @@
 package chornarin.com.kh.TP_Operating_System.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
 @Table(name = "Product") 
+@Data
+@NoArgsConstructor 
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id; // Renamed to lowercase "id" for consistency
 
-    @Column()
+    @Column(nullable = false, unique = true)
     private String code;
 
-    @Column()
+    @Column(nullable = false)
     private String name;
 
-    @Column()
+    @Column(nullable = false)
     private String country;
 
-    @Column()
+    @Column(nullable = false)
     private double cost;
 
-    @Column()
+    @Column(nullable = false)
     private String image;
 
-    @Column()
+    @Column(length = 500) 
     private String descriptions;
 
+    public Product(String code, String name, String country, double cost, String image, String descriptions) {
+        this.code = code;
+        this.name = name;
+        this.country = country;
+        this.cost = cost;
+        this.image = image;
+        this.descriptions = descriptions;
+    }
 }

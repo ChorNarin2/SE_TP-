@@ -1,0 +1,30 @@
+<div class="card mt-4">
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Country</th>
+                    <th>Code</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.descriptions}"></td>
+                    <td th:text="${product.cost}"></td>
+                    <td th:text="${product.country}"></td>
+                    <td th:text="${product.code}"></td>
+                    <td>
+                        <img th:src="@{/products/files/{file}(file=${product.image})}" alt="Product Image" style="width: 100px; height: auto;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
